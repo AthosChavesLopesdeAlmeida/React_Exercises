@@ -1,11 +1,21 @@
 import './index.css'
-import Review from './Reviews'
+import questions from './data'
+import Question from './Question'
 
 function App() {
   return (
     <>
-      <main className='main_container'>
-        <Review/>
+      <main className='main-container'>
+        <header>
+          <h1>Questions</h1>
+        </header>
+        <ul>
+          {questions.map((question) => {
+            return (
+              <Question key={question.id} {...question}/>
+            )
+          })}
+        </ul>
       </main>
     </>
   )
