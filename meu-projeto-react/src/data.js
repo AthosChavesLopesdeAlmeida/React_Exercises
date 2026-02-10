@@ -1,33 +1,75 @@
-const questions = [
+const items = [
   {
     id: 1,
-    title: 'Do I have to allow the use of cookies?',
-    info:
-      'Unicorn vinyl poutine brooklyn, next level direct trade iceland. Shaman copper mug church-key coloring book, whatever poutine normcore fixie cred kickstarter post-ironic street art.',
+    title: 'Buttermilk Pancakes',
+    category: 'Breakfast',
+    price: 15.99,
+    img: 'https://kodiakcakes.com/cdn/shop/articles/Kodiak_Recipe_High-Protein_Blueberry_Flapjacks_0325_0103_6d12debf-abb6-4d0f-8f05-2e795fd3d4fe.jpg?v=1756398610&width=256',
+    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
   },
   {
     id: 2,
-    title: 'How do I change my My Page password?',
-    info:
-      'Coloring book forage photo booth gentrify lumbersexual. Migas chillwave poutine synth shoreditch, enamel pin thundercats fashion axe roof party polaroid chartreuse.',
+    title: 'Diner Double',
+    category: 'Lunch',
+    price: 13.99,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8IPUHYCpO5gj6sx2d5pNuqpxEld3aBbWCKQ&s',
+    desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
   },
   {
     id: 3,
-    title: 'What is BankID?',
-    info:
-      'Enamel pin fam sustainable woke whatever venmo. Authentic asymmetrical put a bird on it, lumbersexual activated charcoal kinfolk banjo cred pickled sartorial.',
+    title: 'Godzilla Milkshake',
+    category: 'Shakes',
+    price: 6.99,
+    img: 'https://cdn.acritica.net/img/pc/920/600/dn_arquivo/2022/02/milkshake.jpg',
+    desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
   },
   {
     id: 4,
-    title: 'Whose birth number can I use?',
-    info:
-      'Edison bulb direct trade gentrify beard lo-fi seitan sustainable roof party franzen occupy squid. Knausgaard cronut succulents, scenester readymade shabby chic lyft. Copper mug meh vegan gentrify.',
+    title: 'Country Delight',
+    category: 'Breakfast',
+    price: 20.99,
+    img: 'https://www.foodservicedirect.com/_next/image?url=https%3A%2F%2Fdrryor7280ntb.cloudfront.net%2Fmedia%2Fcatalog%2Fproduct%2F1%2F0%2F10094562062320_ws_3_vd7chfjllovzc65d.jpg&w=256&q=75',
+    desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
   },
   {
     id: 5,
-    title: 'When do I recieve a password ordered by letter?',
-    info:
-      'Locavore franzen fashion axe live-edge neutra irony synth af tilde shabby chic man braid chillwave waistcoat copper mug messenger bag. Banjo snackwave blog, microdosing thundercats migas vaporware viral lo-fi seitan ',
+    title: 'Egg Attack',
+    category: 'Lunch',
+    price: 22.99,
+    img: 'https://bigoven-res.cloudinary.com/image/upload/f_auto,q_auto/t_recipe-256/eggs-en-cocotte-with-creamed-m-9282d3.jpg',
+    desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
   },
-]
-export default questions
+  {
+    id: 6,
+    title: 'Oreo Dream',
+    category: 'Shakes',
+    price: 18.99,
+    img: 'https://bigoven-res.cloudinary.com/image/upload/f_auto,q_auto/t_recipe-256/cookies-and-cream-ice-cream-milkshake-1609564.jpg',
+    desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
+  },
+  {
+    id: 7,
+    title: 'Bacon Overflow',
+    category: 'Breakfast',
+    price: 8.99,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_gfLS1fMNHwVUnZhH3eZICrcysj_lsH50Ug&s',
+    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
+  },
+  {
+    id: 8,
+    title: 'American Classic',
+    category: 'Lunch',
+    price: 12.99,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqX1Y3dElpViCQYjjWRxn7FnbrmUZ5R47yQg&s',
+    desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
+  },
+  {
+    id: 9,
+    title: 'Quarantine Buddy',
+    category: 'Shakes',
+    price: 16.99,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5z-0ndOCWO7h4vmXNNH2zCqGoTmW8JbRcag&s',
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
+];
+export default items;
