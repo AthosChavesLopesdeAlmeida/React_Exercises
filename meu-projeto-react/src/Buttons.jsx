@@ -1,16 +1,13 @@
-export default function Button ({categories, filterCategories}) {
+export default function Button({jobs, action}) {
   return (
-    <div className="btn_container">
-      {categories.map((category, index) => {
+    <section className="buttons_section">
+      {jobs.map((job) => {
         return (
-        <button 
-        type="button" 
-        onClick={() => (filterCategories(category))} 
-        key={index}>
-          {category}
-        </button>
+          <button onClick={() => action(job.id)} key={job.id}>
+            {job.company}
+          </button>
         )
       })}
-    </div>
+    </section>
   )
 }
