@@ -1,55 +1,48 @@
 import React, { useState } from 'react'
-import SingleColor from './SingleColor'
 import './index.css'
-
-import Values from 'values.js'
+import List from './Items'
 
 function App() {
-  const [color, setColor] = useState('')
-  const [error, setError] = useState(false)
-  const [list, setList] = useState(new Values('#f15025').all(10))
+  const [list, setList] = useState([])
+  const [title, setTitle] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    try {
-      let colors = new Values(color).all(10)
-      setList(colors)
-    } catch (error) {
-      setError(true)
-      console.log(error)
+    
+    if(!title) {
+      console.log('error')
+    } else {
+      const newItem = {id: new Date().getTime().toString(), title: title}
+      setList([...list, newItem])
     }
+
+    setTitle('')
+    return
+  }
+
+  const removeItem = (id) => {
+    setList(list.filter((item) => item.id !== id))
+  }
+
+  const checkItem = (id) => {
+    let checkedItem = list.find((item) => item.id === id)
+    console.log(`${checkedItem}: CHECKED`)
   }
 
   return (
-    <>
-      <section className='container'>
-        <h3>color generator</h3>
-        <form onSubmit={handleSubmit}>
-          <input
-            type='text'
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
-            placeholder='#f15025'
-            className={`${error ? 'error' : null}`}
-          />
-          <button className='btn' type='submit'>
-            submit
-          </button>
-        </form>
-      </section>
-      <section className='colors'>
-        {list.map((color, index) => {
-          return (
-            <SingleColor
-              key={index}
-              {...color}
-              index={index}
-              hexColor={color.hex}
-            />
-          )
-        })}
-      </section>
-    </>
+    <section className='container'>
+      <h3>Grocery Bud</h3>
+      
+      <form onSubmit={handleSubmit}>
+        <input type="text" 
+        className='product_input' 
+        onChange={(e) => setTitle(e.target.value)}/>
+
+        <button className='btn' type='submit'>Add</button>
+      </form>
+      
+      <List items={list} removeItem={removeItem} editItem={checkItem}/>
+    </section>
   )
 }
 
