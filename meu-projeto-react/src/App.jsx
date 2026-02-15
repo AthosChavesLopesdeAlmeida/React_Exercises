@@ -1,48 +1,35 @@
 import React, { useState } from 'react'
+import { links } from './data'
+import { FaBars } from 'react-icons/fa'
 import './index.css'
-import List from './Items'
 
 function App() {
-  const [list, setList] = useState([])
-  const [title, setTitle] = useState('')
+  const siteLinks = links
+  const [showLinks, setShowLinks] = useState(false)
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    if(!title) {
-      console.log('error')
-    } else {
-      const newItem = {id: new Date().getTime().toString(), title: title}
-      setList([...list, newItem])
-    }
-
-    setTitle('')
-    return
-  }
-
-  const removeItem = (id) => {
-    setList(list.filter((item) => item.id !== id))
-  }
-
-  const checkItem = (id) => {
-    let checkedItem = list.find((item) => item.id === id)
-    console.log(`${checkedItem}: CHECKED`)
+  const toggleLinks = () => {
+    setShowLinks(!showLinks)
   }
 
   return (
-    <section className='container'>
-      <h3>Grocery Bud</h3>
-      
-      <form onSubmit={handleSubmit}>
-        <input type="text" 
-        className='product_input' 
-        onChange={(e) => setTitle(e.target.value)}/>
-
-        <button className='btn' type='submit'>Add</button>
-      </form>
-      
-      <List items={list} removeItem={removeItem} editItem={checkItem}/>
-    </section>
+<nav className='navigation'>
+  <header className='supa_mega_header_no_idea_for_a_coherent_name'>
+    <h3 className='coding'>
+      Coding <span className='addict'>Addict</span>
+    </h3>
+    <button className='hamburger_menu' onClick={toggleLinks}>
+      <FaBars/>
+    </button>
+  </header>
+  <ul className={showLinks === false ? 'closed' : 'open'}>
+    {siteLinks.map((link) => {
+      const {id, url, text} = link
+      return (
+        <li key={id}><a href={url}>{text}</a></li>
+      )
+    })}
+  </ul>
+</nav>
   )
 }
 
